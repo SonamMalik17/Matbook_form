@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Space Grotesk', 'Fira Sans', 'Segoe UI', sans-serif;
+  color: #0a0a0f;
+  --surface: #0f172a;
+  --panel: #0b1224;
+  --border: #1f2937;
+  --ink: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #06b6d4;
+}
+
+:root[data-theme='light'] {
+  --surface: #f8fafc;
+  --panel: #ffffff;
+  --border: #e2e8f0;
+  --ink: #0f172a;
+  --muted: #475569;
+  --accent: #0ea5e9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--surface);
+  color: var(--ink);
+  @apply antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.card {
+  background: var(--panel);
+  color: var(--ink);
+  border: 1px solid var(--border);
+  @apply rounded-2xl p-6;
+}
+
+.input {
+  background: var(--panel);
+  color: var(--ink);
+  border: 1px solid var(--border);
+  @apply w-full rounded-lg px-3 py-2 text-sm placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-500/40 transition;
+}
+
+.label {
+  @apply flex items-center justify-between text-sm font-semibold text-slate-200;
+}
+
+.badge {
+  background: var(--border);
+  color: var(--ink);
+  @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide;
+}
+
+.pill {
+  background: var(--panel);
+  color: var(--ink);
+  border: 1px solid var(--border);
+  @apply inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs;
+}
